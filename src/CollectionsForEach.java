@@ -9,9 +9,9 @@ public class CollectionsForEach {
 		List<String> names = new ArrayList<String>();
 		List<String> subjects = new ArrayList<String>();
 		
-		String name = "Harini";	
+		String name = "A";	
 		names.add(name);
-		name = "Hari";
+		name = "B";
 		names.add(name);
 		
 		subjects.add("Big Data");

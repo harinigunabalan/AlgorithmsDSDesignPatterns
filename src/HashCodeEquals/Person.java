@@ -38,17 +38,19 @@ public class Person {
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
-		return result;
+		return result; 
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		
 		Person other = (Person) obj;
 		if (id != other.id)
 			return false;

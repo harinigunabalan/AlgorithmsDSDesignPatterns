@@ -7,7 +7,7 @@ public class MyTreeMap {
 		// TODO Auto-generated method stub
 
 		 NavigableMap<Integer,String> map =
-			        new TreeMap<Integer, String>();
+			        new TreeMap<Integer, String>();		// Navigable map is interface and TreeMAp is the Implementation
 
 			    map.put(0, "Kid");
 			    map.put(11, "Teens");
@@ -23,6 +23,8 @@ public class MyTreeMap {
 			    System.out.println(map.get(map.floorKey(30)));     // Thirties
 			    System.out.println(map.floorEntry(42).getValue()); // Forties
 			    System.out.println(map.get(map.floorKey(666)));    // OMG OMG OMG!
+			    
+			    System.out.println(map.floorEntry(13));
 		
 	}
 
