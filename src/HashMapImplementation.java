@@ -8,11 +8,11 @@ public class HashMapImplementation {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		HashMap<String, String> hm = new HashMap<String, String>();
-		hm.put("Harini", "Distributed Software Systems");
-		hm.put("Hari", "Distributed Software Systems");
+		hm.put("A1", "Distributed Software Systems");
+		hm.put("A2", "Distributed Software Systems");
 		
-		hm1.put("Harini", "Distributed Software Systems");
-		hm1.put("Hari", "Distributed Software Systems");
+		hm1.put("A1", "Distributed Software Systems");
+		hm1.put("A2", "Distributed Software Systems");
 		
 		System.out.println(hm.hashCode());
 	}

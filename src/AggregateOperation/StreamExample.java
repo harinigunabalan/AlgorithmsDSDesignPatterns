@@ -13,16 +13,16 @@ public class StreamExample {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<Person> roster = new ArrayList<Person>();
-		Person p1 = new Person("Harini", Person.sex.FEMALE, 25, "harinigunabalan@gmail.com" );
-		Person p2 = new Person("Hari", Person.sex.MALE, 26, "gtrghtrhg@gmail.com" );
-		Person p3 = new Person("Micahel", Person.sex.MALE, 35, "sdfgdg@gmail.com" );
-		Person p4 = new Person("Anu", Person.sex.FEMALE, 25, "thrth@gmail.com" );
-		Person p5 = new Person("Gerald", Person.sex.MALE, 35, "tfgsrhbrtg@gmail.com" );
-		Person p6 = new Person("Aryan", Person.sex.MALE, 28, "thsrtjhtzjtz@gmail.com" );
-		Person p7 = new Person("Chetan", Person.sex.MALE, 29, "rawerrtjhtzj@gmail.com" );
-		Person p8 = new Person("Sebastian", Person.sex.MALE, 35, "ertwerzhtjh@gmail.com" );
-		Person p9 = new Person("Lutz", Person.sex.MALE, 29, "ertr5uztj@gmail.com" );
-		Person p10 = new Person("Mandel", Person.sex.FEMALE, 25, "dfghfzjhtz@gmail.com" );
+		Person p1 = new Person("A1", Person.sex.FEMALE, 25, "a1@gmail.com" );
+		Person p2 = new Person("A2", Person.sex.MALE, 26, "gtrghtrhg@gmail.com" );
+		Person p3 = new Person("A3", Person.sex.MALE, 35, "sdfgdg@gmail.com" );
+		Person p4 = new Person("A4", Person.sex.FEMALE, 25, "thrth@gmail.com" );
+		Person p5 = new Person("A5", Person.sex.MALE, 35, "tfgsrhbrtg@gmail.com" );
+		Person p6 = new Person("A6", Person.sex.MALE, 28, "thsrtjhtzjtz@gmail.com" );
+		Person p7 = new Person("A7", Person.sex.MALE, 29, "rawerrtjhtzj@gmail.com" );
+		Person p8 = new Person("A8", Person.sex.MALE, 35, "ertwerzhtjh@gmail.com" );
+		Person p9 = new Person("A9", Person.sex.MALE, 29, "ertr5uztj@gmail.com" );
+		Person p10 = new Person("A10", Person.sex.FEMALE, 25, "dfghfzjhtz@gmail.com" );
 		
 		roster.add(p1);
 		roster.add(p2);
@@ -52,8 +52,7 @@ public class StreamExample {
 		
 		Map<sex, List<Person>> groupPersons = new HashMap<Person.sex, List<Person>>(); 
 			groupPersons = roster.parallelStream().collect(Collectors.groupingBy(Person::getGender));
-		
-			
+
 			
 	}
 
