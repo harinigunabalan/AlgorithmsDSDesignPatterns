@@ -1,6 +1,6 @@
-package AggregateOperation;
+package ComparatorComparable;
 
-public class Person {
+public class Person implements Comparable{
 	String name;
 	public enum sex{
 		MALE, FEMALE
@@ -8,9 +8,7 @@ public class Person {
 	sex gender;
 	int age;
 	String email;
-	
-	
-	
+
 	public Person(String name, sex gender, int age, String email) {
 		super();
 		this.name = name;
@@ -44,4 +42,19 @@ public class Person {
 	}
 	
 	
+	
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", gender=" + gender + ", age=" + age + ", email=" + email + "]";
+	}
+	@Override
+	public int compareTo(Object o) {
+		Person p = (Person) o;
+		if(this.age > p.age)
+			return 1;
+		else if (this.age == p.age)
+			return 0;
+		else 
+			return -1;
+	}
 }

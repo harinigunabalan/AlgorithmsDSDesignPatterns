@@ -99,8 +99,8 @@ public class VectorArrayList {
 	public static void main(String[] args){
 		
 		VectorArrayList VAL = new VectorArrayList();
-		// VAL.vectorManipulation();
-		VAL.arrayListLinkedList();
+		VAL.vectorManipulation();
+		// VAL.arrayListLinkedList();
 		
 	}
 	

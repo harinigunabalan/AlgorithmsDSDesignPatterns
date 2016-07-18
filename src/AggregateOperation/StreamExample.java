@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import AggregateOperation.Person.sex;
+import ComparatorComparable.Person;
+import ComparatorComparable.Person.sex;
 
 public class StreamExample {
 

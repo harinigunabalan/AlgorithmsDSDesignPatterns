@@ -39,6 +39,8 @@ public class CollectionsForEach {
 		
 		System.out.println(d1);
 		
+	
+		
 	}
 	
 }

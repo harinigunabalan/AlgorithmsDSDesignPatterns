@@ -16,8 +16,9 @@ public class FinalKeyword {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				int i = x;
+				final int i = x;
 				System.out.println(i);
+				
 			}
 			
 		});
