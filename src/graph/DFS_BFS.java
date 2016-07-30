@@ -19,6 +19,23 @@ public class DFS_BFS {
 		}
 	}
 	
+	
+	public boolean detectCycleDFS(GraphNode root){
+		if (root == null) return false;
+		System.out.println(root.getVertex_name());
+		root.state = State.VISITING;
+		GraphNode[] children = root.getChildren();
+		for(GraphNode child: children){
+			if(child.state == State.NOT_VISITED){
+				return detectCycleDFS(child);
+			}else if(child.state == State.VISITING){
+				return true;		// cycle detection
+			}
+		}
+		root.state = State.VISITED;
+		return false;
+	}
+	
 	public void BFS(GraphNode root){
 		
 		if(root != null)
@@ -29,7 +46,6 @@ public class DFS_BFS {
 		else return;
 		
 		Queue<GraphNode> queue = new LinkedList<GraphNode>();
-		
 		for(GraphNode child : root.getChildren()){
 			queue.add(child);
 		}
@@ -77,7 +93,9 @@ public class DFS_BFS {
 		// obj.DFS(node1);
 		
 		System.out.println("BFS:");
-		obj.BFS(node1);
+		// obj.BFS(node1);
+		
+		System.out.println(obj.detectCycleDFS(node1));
 		
 	}
 }

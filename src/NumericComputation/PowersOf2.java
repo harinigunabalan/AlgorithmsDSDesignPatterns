@@ -1,4 +1,6 @@
-package NumericComputation;
+ package NumericComputation;
+
+import java.util.ArrayList;
 
 public class PowersOf2 {
 
@@ -19,6 +21,17 @@ public class PowersOf2 {
 	
 	public static void main(String[] args){
 		powersOf2(50);
+		int a = 23;
+		int b = 19;
+		
+		System.out.println("a is :" + a + "b is : " + b);
+		a = a - b;
+		b = b + a;
+		a = b - a;
+		System.out.println("a is :" + a + "b is : " + b);
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		
 	}
+	
 	
 }

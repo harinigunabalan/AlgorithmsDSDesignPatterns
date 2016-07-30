@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class SubString {
 
@@ -45,6 +48,62 @@ public class SubString {
 		}
 		
 		return new String(str);
+	}
+	
+	public static String runLengthEncoding(String input){
+		
+		//char[] result = new char[input.length()];
+		ArrayList<Character> result = new ArrayList<Character>();
+		char[] inp = input.toCharArray();
+		int currCharCount = 1;
+		char curr, prev = '\0';
+		int j = 0;
+		for(int i =0; i < inp.length; i++){
+			curr = inp[i];
+			if(curr == prev){	
+				currCharCount++;
+			}
+			if((curr != prev && prev != '\0') || i == inp.length -1){		
+				if(j >= input.length()){
+					return input;
+				}
+				result.add(prev);  j++;
+				if(j >= input.length()){
+					return input;
+				}
+				char count = (char) (currCharCount + '0');
+				result.add(count); j++;
+				
+				currCharCount = 1;
+			}
+			prev = curr;
+		}
+		String resultStr = result.toString();
+		
+		return resultStr;
+	}
+	
+	public static HashSet<String> getPermutation(String str){
+		  HashSet<String> permutations = new LinkedHashSet<String>();		
+		if(str == null){
+			return null;
+		}
+		
+		if (str.length() == 0){
+			permutations.add("");
+			return permutations;
+		}
+
+			char first = str.charAt(0);
+			String remainder = str.substring(1);
+			for(String word: getPermutation(remainder)){
+				for(int i = 0; i <= word.length();i++){
+					String perm = word.substring(0, i)+ first + word.substring(i);
+					permutations.add(perm);
+				}
+			}
+			return permutations;
+			
 	}
 	
 	public static void main(String[] args){
@@ -92,6 +151,14 @@ public class SubString {
 		System.out.println(reverse("hariharan"));
 		System.out.println(reverse("I am from India"));
 		System.out.println(reverse("Bubyeee"));
+		
+		String rlc = runLengthEncoding("lllllllliiiiiiooooo");
+		System.out.println(rlc);
+		
+		String test = "harinI";
+		System.out.println(getPermutation(test));
+		System.out.println(getPermutation(test).size());
+		
 		
 	}
 	
