@@ -35,7 +35,7 @@ public class BinarySearchTree {
 	public void addNode(TreeNode root, TreeNode node){
 		
 		if(root == null)
-			node = root;
+			root = node;
 		else{
 				if (node.value < root.value){
 					if(root.left != null)
@@ -51,6 +51,45 @@ public class BinarySearchTree {
 				}	
 		}
 		
+	}
+
+	public void addNode(TreeNode root, int n){
+
+		if(root == null){
+			TreeNode newNode = new TreeNode(n);
+			root = newNode;
+		}else{
+			if(n > root.value)
+				if(root.right != null)
+					addNode(root.right, n);
+				else{
+					TreeNode newNode = new TreeNode(n);
+					root.right = newNode;
+				}
+
+			else
+			if(root.left != null)
+				addNode(root.left, n);
+			else{
+				TreeNode newNode = new TreeNode(n);
+				root.left = newNode;
+			}
+
+
+		}
+	}
+
+	public boolean search(TreeNode root, int n){
+		if(root == null)
+			return false;
+		else{
+			if(root.value == n)
+				return true;
+			else if(root.value < n)
+				return (search(root.right, n));
+			else
+				return(search(root.left, n));
+		}
 	}
 
 	public static void main(String[] args) {
@@ -80,6 +119,34 @@ public class BinarySearchTree {
 		preOrderTraversal(root);
 		System.out.println("Post Order Traversal:");
 		postOrderTraversal(root);
+
+		System.out.println(bst.search(root, 60));
+		System.out.println(bst.search(root, 50));
+		System.out.println(bst.search(root, 100));
+		System.out.println(bst.search(root, 33));
+		System.out.println(bst.search(root, 7));
+		System.out.println(bst.search(root, 25));
+		System.out.println(bst.search(root, 31));
+		System.out.println(bst.search(root, 75));
+		System.out.println(bst.search(root, 18));
+		System.out.println(bst.search(root, 17));
+
+		TreeNode root2 = new TreeNode(50);
+		bst.addNode(root2, 75);
+		bst.addNode(root2, 25);
+		bst.addNode(root2, 31);
+		bst.addNode(root2, 7);
+		bst.addNode(root2, 100);
+		bst.addNode(root2, 60);
+		bst.addNode(root2, 33);
+		// bst.addNode2(root, 75);
+
+		System.out.println("In Order Traversal:");
+		inOrderTraversal(root2);
+		System.out.println("Pre Order Traversal:");
+		preOrderTraversal(root2);
+		System.out.println("Post Order Traversal:");
+		postOrderTraversal(root2);
 	}
 
 }

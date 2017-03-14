@@ -21,7 +21,8 @@ public class HashMapImplementation {
 
 		
 // Different ways of Iterating through a hashmap		
-		Iterator it = hm.entrySet().iterator();		// EntrySet
+		Iterator it = hm.entrySet().iterator();		// EntrySet 
+		
 	
 		for(;it.hasNext();){
 			Map.Entry<String, String> current = (Map.Entry<String, String>)it.next();

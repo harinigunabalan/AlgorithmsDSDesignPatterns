@@ -13,6 +13,8 @@ public class ParallelStream {
 		numbers = Arrays.asList(arr);
 		numbers.stream().forEach(e -> System.out.print(e));
 		System.out.println();
+		numbers.parallelStream().forEach( e -> System.out.print(e));
+		System.out.println();
 		numbers.parallelStream().forEachOrdered( e -> System.out.print(e));
 	}
 
