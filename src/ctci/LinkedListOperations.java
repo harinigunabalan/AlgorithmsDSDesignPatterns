@@ -1,5 +1,7 @@
 package ctci;
 
+import java.util.LinkedList;
+
 public class LinkedListOperations {
 	
 	static LinkedListNode head;
@@ -46,6 +48,34 @@ public class LinkedListOperations {
 		head = prev;
 		return head;
 	}
+
+	public void rotate(int k){
+		int length = 0;
+		LinkedListNode curr = head;
+		LinkedListNode prev = null;
+		LinkedListNode newHead = null;
+
+		while(curr != null){
+			length++;
+			curr = curr.next;
+		}
+		if(k > length)
+			return;
+		curr = head;
+
+		while(k>0){
+			prev = curr;
+			curr = curr.next;
+			k--;
+		}
+		newHead = curr;
+		while(curr.next != null)
+			curr = curr.next;
+		prev.next = null;
+		curr.next = head;
+		head = newHead;
+		tail = prev;
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -61,6 +91,11 @@ public class LinkedListOperations {
 		llo.PrintLL();
 		llo.LLReversal();
 		System.out.println("null");
+		System.out.println("------REVERSE------");
+		llo.PrintLL();
+		System.out.println();
+		System.out.println("------ROTATE------");
+		llo.rotate(3);
 		llo.PrintLL();
 	}
 

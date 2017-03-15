@@ -11,7 +11,7 @@ public class GraphNode2 {
 	State state;
 	List<GraphNode2> children = new ArrayList<>();
 
-	public GraphNode2(String vertex, int children_count){
+	public GraphNode2(String vertex){
 		this.vertex_name = vertex;;
 		this.state = State.NOT_VISITED;
 	}

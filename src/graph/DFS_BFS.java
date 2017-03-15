@@ -93,9 +93,9 @@ public class DFS_BFS {
 		// obj.DFS(node1);
 		
 		System.out.println("BFS:");
-		// obj.BFS(node1);
+		obj.BFS(node1);
 		
-		System.out.println(obj.detectCycleDFS(node1));
+		// System.out.println(obj.detectCycleDFS(node1));
 		
 	}
 }
