@@ -31,7 +31,9 @@ public class HashMapImplementation {
 		
 		for(Map.Entry<String, String> entry : hm.entrySet()){
 			String key = entry.getKey();
+			System.out.println(key);
 			String value = entry.getValue();
+			System.out.println(value);
 		}
 		
 		Iterator it1 = hm.keySet().iterator(); 	// Key set

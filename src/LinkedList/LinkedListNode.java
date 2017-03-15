@@ -1,6 +1,4 @@
-package ctci;
-
-import LeetCode.ListNode;
+package LinkedList;
 
 public class LinkedListNode {
 

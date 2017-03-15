@@ -1,6 +1,4 @@
-package ctci;
-
-import java.util.LinkedList;
+package LinkedList;
 
 public class LinkedListOperations {
 	
@@ -75,6 +73,29 @@ public class LinkedListOperations {
 		curr.next = head;
 		head = newHead;
 		tail = prev;
+	}
+
+	public LinkedListNode isCircular(){
+		LinkedListNode node = null;
+		LinkedListNode fast = head;
+		LinkedListNode slow = head;
+		int k = 0;
+		while(fast != null && fast.next.next != null){
+			slow = slow.next;
+			fast = fast.next.next;
+			if(fast == slow){
+				// colision
+				break;
+			}
+		}
+
+		fast = head;
+		while (slow != fast){
+			fast = fast.next;
+			slow = slow.next;
+		}
+
+		return slow;
 	}
 	
 	public static void main(String[] args) {

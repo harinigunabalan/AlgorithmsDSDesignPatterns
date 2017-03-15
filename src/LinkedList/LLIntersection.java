@@ -1,4 +1,4 @@
-package ctci;
+package LinkedList;
 
 public class LLIntersection {
 	
